@@ -2,7 +2,6 @@
 
 It is a React Native app developed for name numerology.
 
-This app has following features:
 
 <br/><br/>
 
@@ -86,3 +85,7 @@ yarn run android-build
 4. Click on `Create new release` which is on the right top. It would open `Create production release`.
 5. Upload the build file and follow the instructions.
    <br/><br/>
+
+
+# Disclaimer
+I don't believe in numerology. I have created this app for people who believe in Numerology
