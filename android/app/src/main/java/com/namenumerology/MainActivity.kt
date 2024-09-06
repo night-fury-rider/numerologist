@@ -1,4 +1,4 @@
-package com.namenumerology
+package com.yuvrajpatil.apps.numerology.name
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
