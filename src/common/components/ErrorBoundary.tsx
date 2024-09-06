@@ -1,5 +1,5 @@
 import {Text} from 'react-native';
-import React, {Component, ErrorInfo, ReactNode} from 'react';
+import {Component, ErrorInfo, ReactNode} from 'react';
 
 type TProps = {
   children: ReactNode;
