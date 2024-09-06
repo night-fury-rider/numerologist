@@ -8097,6 +8097,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-paper@patch:react-native-paper@npm%3A5.12.5#./.yarn/patches/react-native-paper-npm-5.12.5-c595c2e788.patch::locator=name-numerology%40workspace%3A.":
+  version: 5.12.5
+  resolution: "react-native-paper@patch:react-native-paper@npm%3A5.12.5#./.yarn/patches/react-native-paper-npm-5.12.5-c595c2e788.patch::version=5.12.5&hash=701004&locator=name-numerology%40workspace%3A."
+  dependencies:
+    "@callstack/react-theme-provider": ^3.0.9
+    color: ^3.1.2
+    use-latest-callback: ^0.1.5
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-safe-area-context: "*"
+    react-native-vector-icons: "*"
+  checksum: c2e125349d5d212378177314148be4e52bd0dcb8b7b6d3e1a6d8765061ce7c58a4d777b237a12e2263d779dda7f3f5c6858517770af48c14b183a66585f45429
+  languageName: node
+  linkType: hard
+
 "react-native-safe-area-context@npm:4.10.9":
   version: 4.10.9
   resolution: "react-native-safe-area-context@npm:4.10.9"
