@@ -32,7 +32,8 @@ export const COMMON = {
 };
 
 export const DASHBOARD = {
-  emptyMsg: 'Death is so final, yet life is full of possibilities.',
+  emptyMsg: 'Dashboard is coming Soon',
+  comingSoon: 'Dashboard is coming Soon',
   title: 'Items',
   searchBox: {
     placeholder: 'Search Item',

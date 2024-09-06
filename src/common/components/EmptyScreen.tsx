@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Icon} from 'react-native-paper';
 
 type EmptyScreenProps = {
-  message: string;
+  message?: string;
   iconName?: string;
 };
 
@@ -11,7 +11,9 @@ const EmptyScreen = ({message, iconName}: EmptyScreenProps) => {
     <View style={[styles.container]}>
       {iconName ? <Icon source={iconName} size={50} /> : null}
 
-      <Text style={styles.message}>{message}</Text>
+      <Text style={styles.message}>
+        {message ? message : 'Life is Beautiful'}
+      </Text>
     </View>
   );
 };

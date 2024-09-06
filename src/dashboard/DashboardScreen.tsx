@@ -21,10 +21,10 @@ const DashboardScreen = ({navigation}: any) => {
         <EmptyScreen
           message={
             allItems?.length === 0
-              ? DASHBOARD.emptyMsg
+              ? DASHBOARD.comingSoon
               : DASHBOARD.searchBox.noResults
           }
-          iconName="phone-outline"
+          iconName="home-outline"
         />
       ) : null}
       <View style={styles.container}>
@@ -41,9 +41,6 @@ const DashboardScreen = ({navigation}: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
   },
 });
 

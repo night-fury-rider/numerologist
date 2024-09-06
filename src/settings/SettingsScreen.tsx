@@ -10,6 +10,7 @@ import {
   setColorThemeIndex,
   setDevelopersOptions,
 } from '$settings/settingsSlice';
+import EmptyScreen from 'common/components/EmptyScreen';
 
 const SettingsScreen = () => {
   const dispatch = useAppDispatch();
@@ -48,7 +49,11 @@ const SettingsScreen = () => {
     dispatch(setDevelopersOptions(isEnabled));
   };
 
-  return <View style={[styles.container]}></View>;
+  return (
+    <View style={[styles.container]}>
+      <EmptyScreen message={SETTINGS.comingSoon} iconName="wrench-outline" />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
