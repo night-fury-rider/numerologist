@@ -21,14 +21,13 @@ function App() {
       focusedIcon: 'currency-inr',
       unfocusedIcon: 'currency-inr',
     },
-    // TODO/Note: If we want to add settings tab, uncomment code below
-    /* ,
+
     {
       key: 'settings',
       title: 'Settings',
       focusedIcon: 'wrench',
       unfocusedIcon: 'wrench-outline',
-    }, */
+    },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
