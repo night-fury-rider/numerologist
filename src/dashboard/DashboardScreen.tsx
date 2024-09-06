@@ -1,38 +1,35 @@
-import React from 'react';
 import {FlatList, StyleSheet, View} from 'react-native';
 
 import EmptyScreen from '$common/components/EmptyScreen';
 import {DASHBOARD} from '$common/constants/strings.constants';
 import {useAppSelector} from '$common/redux/redux.hooks';
-import {TContact} from '$dashboard/dashboard.types';
+import {TItem} from '$dashboard/dashboard.types';
 
 // TODO: Use specific type instead of any
 const DashboardScreen = ({navigation}: any) => {
-  const filteredContacts = useAppSelector(
-    state => state.dashboard.filteredContacts,
-  );
+  const items = useAppSelector(state => state.dashboard.filteredItems);
 
-  const allContacts = useAppSelector(state => state.dashboard.contacts);
+  const allItems = useAppSelector(state => state.dashboard.items);
 
-  const renderItem = (contactObj: TContact) => {
+  const renderItem = (itemObj: TItem) => {
     return <View></View>;
   };
 
   return (
     <>
-      {!filteredContacts || filteredContacts?.length === 0 ? (
+      {!items || items?.length === 0 ? (
         <EmptyScreen
           message={
-            allContacts?.length === 0
+            allItems?.length === 0
               ? DASHBOARD.emptyMsg
               : DASHBOARD.searchBox.noResults
           }
           iconName="phone-outline"
         />
       ) : null}
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
         <FlatList
-          data={filteredContacts}
+          data={items}
           renderItem={({item}) => renderItem(item)}
           keyExtractor={item => item.id}
         />
@@ -47,10 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 10,
-  },
-  contactAvatar: {
-    width: 35,
-    height: 35,
   },
 });
 

@@ -25,10 +25,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
   },
-  icon: {
-    marginVertical: 20,
-  },
   message: {
     fontSize: 20,
+    marginVertical: 50,
   },
 });

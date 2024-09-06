@@ -9,7 +9,7 @@ const DashboardHeader = () => {
     state => state.dashboard.lastModifiedTime,
   );
 
-  // Reset the search string whenever there is update in main contact list
+  // Reset the search string whenever there is update in main item list
   useEffect(() => {}, [lastModifiedTime]);
 
   return <View style={[styles.view]}></View>;

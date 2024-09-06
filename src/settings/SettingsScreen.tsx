@@ -23,9 +23,7 @@ const SettingsScreen = () => {
     state => state.settings.developersOptionsEnabled,
   );
 
-  const totalContacts = useAppSelector(
-    state => state.dashboard.contacts,
-  )?.length;
+  const totalItems = useAppSelector(state => state.dashboard.items)?.length;
 
   const [selectedTheme, setSelectedTheme] = useState(
     APP_CONFIG.colorThemes[colorThemeIndex],
