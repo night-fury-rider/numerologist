@@ -2,6 +2,9 @@
 
 It is a React Native app developed for name numerology.
 
+<p>
+  <pre><img src="https://github.com/user-attachments/assets/67569c5d-dab3-4638-9148-a3f554bfa34c" width="200" height="400" alt=""/></pre>
+</p>
 
 <br/><br/>
 
