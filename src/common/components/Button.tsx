@@ -1,4 +1,4 @@
-import {Button as LibraryButton} from 'react-native';
+import {Button as LibraryButton} from 'react-native-paper';
 import {GestureResponderEvent, StyleSheet} from 'react-native';
 
 type ButtonProps = {
@@ -17,10 +17,10 @@ const Button = ({
   return (
     <LibraryButton
       onPress={handlePress}
-      title={title}
-      buttonStyle={[styles.button, buttonStyle]}
-      titleStyle={titleStyle}
-    />
+      style={[buttonStyle, styles.button]}
+      labelStyle={titleStyle}>
+      {title}
+    </LibraryButton>
   );
 };
 
