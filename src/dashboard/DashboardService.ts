@@ -40,7 +40,6 @@ const NUMEROLOGY_MAP: INumerologyObj = {
 
 const getNumerologyValue = (str: string): number => {
   let result = str.replace(/ /g, '');
-  console.log(`result: ${result}`);
 
   return result
     .toLocaleLowerCase()
