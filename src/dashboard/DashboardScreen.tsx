@@ -8,7 +8,8 @@ import {
 import TextInput from '$common/components/AlphabetInput';
 import Badge from '$common/components/Badge';
 import Text from '$common/components/Text';
-import {isValidName} from 'common/services/UtilService';
+import {DASHBOARD} from '$common/constants/strings.constants';
+import {isValidName} from '$common/services/UtilService';
 
 // TODO: Use specific type instead of any
 const DashboardScreen = ({navigation}: any) => {
@@ -82,7 +83,7 @@ const DashboardScreen = ({navigation}: any) => {
       <View style={styles.container}>
         <View style={styles.row}>
           <TextInput
-            label="First Name"
+            label={DASHBOARD.firstName.label}
             value={firstName}
             handleChange={newName => {
               handleNameChange(`firstName`, newName);
@@ -93,7 +94,7 @@ const DashboardScreen = ({navigation}: any) => {
         </View>
         <View style={styles.row}>
           <TextInput
-            label="Middle Name"
+            label={DASHBOARD.middleName.label}
             value={middleName}
             handleChange={newName => {
               handleNameChange(`middleName`, newName);
@@ -104,7 +105,7 @@ const DashboardScreen = ({navigation}: any) => {
         </View>
         <View style={styles.row}>
           <TextInput
-            label="Last Name"
+            label={DASHBOARD.lastName.label}
             value={lastName}
             handleChange={newName => {
               handleNameChange(`lastName`, newName);
@@ -115,7 +116,7 @@ const DashboardScreen = ({navigation}: any) => {
         </View>
       </View>
       <View style={[styles.row, styles.resultRow]}>
-        <Text title="Result: " variant="headlineLarge" />
+        <Text title={DASHBOARD.result.label} variant="headlineLarge" />
         <Text title={result} variant="headlineLarge" />
       </View>
     </>
