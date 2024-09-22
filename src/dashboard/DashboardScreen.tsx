@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Badge} from 'react-native-paper';
 
 import {
   getNumericSumValue,
   getNumerologyValue,
 } from '$dashboard/DashboardService';
-import TextInput from '$common/components/TextInput';
+import TextInput from '$common/components/AlphabetInput';
+import Badge from '$common/components/Badge';
 import Text from '$common/components/Text';
 import {isValidName} from 'common/services/UtilService';
 
@@ -89,9 +89,7 @@ const DashboardScreen = ({navigation}: any) => {
             }}
             style={styles.nameField}
           />
-          <Badge style={styles.scoreField} size={40}>
-            {firstNameWeight}
-          </Badge>
+          <Badge value={firstNameWeight} />
         </View>
         <View style={styles.row}>
           <TextInput
@@ -102,9 +100,7 @@ const DashboardScreen = ({navigation}: any) => {
             }}
             style={styles.nameField}
           />
-          <Badge style={styles.scoreField} size={40}>
-            {middleNameWeight}
-          </Badge>
+          <Badge value={middleNameWeight} />
         </View>
         <View style={styles.row}>
           <TextInput
@@ -115,9 +111,7 @@ const DashboardScreen = ({navigation}: any) => {
             }}
             style={styles.nameField}
           />
-          <Badge style={styles.scoreField} size={40}>
-            {lastNameWeight}
-          </Badge>
+          <Badge value={lastNameWeight} />
         </View>
       </View>
       <View style={[styles.row, styles.resultRow]}>
@@ -142,13 +136,8 @@ const styles = StyleSheet.create({
     columnGap: 10,
     marginHorizontal: 10,
   },
-  nameField: {
-    flexGrow: 2,
-  },
-  scoreField: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  nameField: {},
+  scoreField: {},
   resultRow: {
     marginBottom: 30,
   },
