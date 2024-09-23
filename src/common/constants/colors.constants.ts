@@ -5,6 +5,7 @@ export const COLORS = {
   grey: 'grey',
   transparent: 'transparent',
   white: 'white',
+  purpleA400: '#6200ee',
 };
 
 export const LIGHT_COLORS = {
