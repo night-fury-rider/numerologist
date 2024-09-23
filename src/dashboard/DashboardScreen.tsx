@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {Card, Text} from 'react-native-paper';
 
 import {
   getNumericSumValue,
@@ -7,7 +8,6 @@ import {
 } from '$dashboard/DashboardService';
 import TextInput from '$common/components/AlphabetInput';
 import Badge from '$common/components/Badge';
-import Text from '$common/components/Text';
 import {DASHBOARD} from '$common/constants/strings.constants';
 import {isValidName} from '$common/services/UtilService';
 
@@ -115,9 +115,22 @@ const DashboardScreen = ({navigation}: any) => {
           <Badge value={lastNameWeight} />
         </View>
       </View>
-      <View style={[styles.row, styles.resultRow]}>
-        <Text title={DASHBOARD.result.label} variant="headlineLarge" />
-        <Text title={result} variant="headlineLarge" />
+
+      <View style={styles.resultContainer}>
+        <Card style={styles.card}>
+          <Card.Content>
+            <Text style={styles.title}>{DASHBOARD.result.label}</Text>
+            <Text style={styles.data} variant="displayLarge">
+              {result}
+            </Text>
+            <Text style={styles.subtitle}>
+              {DASHBOARD.result.subtitle + ' '}
+              {getNumericSumValue(firstNameWeight)}+
+              {getNumericSumValue(middleNameWeight)}+
+              {getNumericSumValue(lastNameWeight)}
+            </Text>
+          </Card.Content>
+        </Card>
       </View>
     </>
   );
@@ -141,6 +154,33 @@ const styles = StyleSheet.create({
   scoreField: {},
   resultRow: {
     marginBottom: 30,
+  },
+
+  resultContainer: {
+    padding: 16,
+    backgroundColor: '#f8f9fa', // TODO: Yuvraj Get it from color constants
+  },
+  card: {
+    borderRadius: 8,
+    elevation: 3,
+    padding: 16,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333', // TODO: Yuvraj Get it from color constants
+    textAlign: 'center',
+  },
+  data: {
+    fontWeight: 'bold',
+    color: '#6200ee', // TODO: Yuvraj Get it from color constants
+    marginVertical: 8,
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#666', // TODO: Yuvraj Get it from color constants
+    textAlign: 'center',
   },
 });
 

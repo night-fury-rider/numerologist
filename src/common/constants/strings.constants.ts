@@ -33,7 +33,8 @@ export const DASHBOARD = {
     label: 'Last Name',
   },
   result: {
-    label: 'Result',
+    label: 'Lucky Number',
+    subtitle: 'Clarification',
   },
 };
 
