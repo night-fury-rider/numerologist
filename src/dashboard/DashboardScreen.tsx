@@ -114,23 +114,22 @@ const DashboardScreen = ({navigation}: any) => {
           />
           <Badge value={lastNameWeight} />
         </View>
-      </View>
-
-      <View style={styles.resultContainer}>
-        <Card style={styles.card}>
-          <Card.Content>
-            <Text style={styles.title}>{DASHBOARD.result.label}</Text>
-            <Text style={styles.data} variant="displayLarge">
-              {result}
-            </Text>
-            <Text style={styles.subtitle}>
-              {DASHBOARD.result.subtitle + ' '}
-              {getNumericSumValue(firstNameWeight)}+
-              {getNumericSumValue(middleNameWeight)}+
-              {getNumericSumValue(lastNameWeight)}
-            </Text>
-          </Card.Content>
-        </Card>
+        <View style={styles.resultContainer}>
+          <Card style={styles.card}>
+            <Card.Content>
+              <Text style={styles.title}>{DASHBOARD.result.label}</Text>
+              <Text style={styles.data} variant="displayLarge">
+                {result}
+              </Text>
+              <Text style={styles.subtitle}>
+                {DASHBOARD.result.subtitle + ' '}
+                {getNumericSumValue(firstNameWeight)}+
+                {getNumericSumValue(middleNameWeight)}+
+                {getNumericSumValue(lastNameWeight)}
+              </Text>
+            </Card.Content>
+          </Card>
+        </View>
       </View>
     </>
   );
@@ -139,15 +138,15 @@ const DashboardScreen = ({navigation}: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    rowGap: 25,
     marginTop: 30,
+    rowGap: 25,
   },
   row: {
+    alignItems: 'center',
+    columnGap: 10,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
     flexDirection: 'row',
-    columnGap: 10,
     marginHorizontal: 10,
   },
   nameField: {},
@@ -155,10 +154,11 @@ const styles = StyleSheet.create({
   resultRow: {
     marginBottom: 30,
   },
-
   resultContainer: {
-    padding: 16,
     backgroundColor: '#f8f9fa', // TODO: Yuvraj Get it from color constants
+    borderColor: 'red',
+    borderWidth: 2,
+    padding: 16,
   },
   card: {
     borderRadius: 8,
@@ -166,20 +166,20 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   title: {
+    color: '#333', // TODO: Yuvraj Get it from color constants
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#333', // TODO: Yuvraj Get it from color constants
     textAlign: 'center',
   },
   data: {
-    fontWeight: 'bold',
     color: '#6200ee', // TODO: Yuvraj Get it from color constants
+    fontWeight: 'bold',
     marginVertical: 8,
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 14,
     color: '#666', // TODO: Yuvraj Get it from color constants
+    fontSize: 14,
     textAlign: 'center',
   },
 });
