@@ -45,12 +45,12 @@ function App() {
           barStyle={{
             backgroundColor: theme.dark
               ? theme.colors.inverseOnSurface
-              : BLUE_COLOR_THEME.background4,
+              : theme.colors.primaryContainer,
           }}
           activeIndicatorStyle={{
             backgroundColor: theme.dark
               ? theme.colors.surface
-              : BLUE_COLOR_THEME.background3,
+              : theme.colors.onPrimary,
           }}
         />
       </SafeAreaProvider>
