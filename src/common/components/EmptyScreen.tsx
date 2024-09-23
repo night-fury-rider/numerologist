@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View} from 'react-native';
-import {Icon} from 'react-native-paper';
+import {Icon, useTheme} from 'react-native-paper';
 
 type EmptyScreenProps = {
   message?: string;
@@ -7,6 +7,9 @@ type EmptyScreenProps = {
 };
 
 const EmptyScreen = ({message, iconName}: EmptyScreenProps) => {
+  const theme = useTheme();
+  const styles = getStyles(theme.colors.primary);
+
   return (
     <View style={[styles.container]}>
       {iconName ? <Icon source={iconName} size={50} /> : null}
@@ -20,15 +23,17 @@ const EmptyScreen = ({message, iconName}: EmptyScreenProps) => {
 
 export default EmptyScreen;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  message: {
-    fontSize: 20,
-    marginVertical: 50,
-  },
-});
+const getStyles = (messageTextColor: string) =>
+  StyleSheet.create({
+    container: {
+      flex: 12,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingVertical: 10,
+    },
+    message: {
+      fontSize: 20,
+      marginVertical: 50,
+      color: messageTextColor,
+    },
+  });

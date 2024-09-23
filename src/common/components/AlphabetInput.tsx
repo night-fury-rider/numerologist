@@ -1,4 +1,4 @@
-import {TextInput as LibraryTextInput} from 'react-native-paper';
+import {TextInput as LibraryTextInput, useTheme} from 'react-native-paper';
 import {InputModeOptions, StyleSheet} from 'react-native';
 import {View} from 'react-native';
 
@@ -19,6 +19,8 @@ const AlphabetInput = ({
   value,
   handleChange,
 }: AlphabetInputProps) => {
+  const theme = useTheme();
+
   return (
     <View style={styles.container}>
       <LibraryTextInput
@@ -28,8 +30,7 @@ const AlphabetInput = ({
         style={[styles.input, style]}
         theme={{
           colors: {
-            primary: '#6200ea', // TODO: Yuvraj get these inline colors to theme file
-            text: '#000',
+            primary: theme.colors.primary,
           },
         }}
         contentStyle={contentStyle}
@@ -47,7 +48,6 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 56,
-    backgroundColor: '#ffffff',
   },
 });
 

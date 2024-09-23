@@ -82,7 +82,7 @@ const DashboardScreen = ({navigation}: any) => {
   };
 
   const styles = getStyles(
-    theme.colors.secondaryContainer,
+    theme.colors.inversePrimary,
     theme.colors.secondary,
     COLORS.purpleA400,
     theme.colors.secondary,
@@ -171,8 +171,10 @@ const getStyles = (
       marginBottom: 30,
     },
     resultContainer: {
+      flexGrow: 2,
       backgroundColor: resultContainerBackgroundColor,
       padding: 16,
+      justifyContent: 'center',
     },
     card: {
       borderRadius: 8,
