@@ -17,7 +17,7 @@ function App() {
   const [routes] = React.useState([
     {
       key: 'dashboard',
-      title: 'Dashboard',
+      title: 'Lucky Name',
       focusedIcon: 'currency-inr',
       unfocusedIcon: 'currency-inr',
     },
