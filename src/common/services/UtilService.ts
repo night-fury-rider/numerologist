@@ -5,7 +5,7 @@ const getClonedObject = (sourceObj: any) =>
 
 const isValidName = (nameStr: string) => {
   // Regular expression to allow only alphabets
-  const regex = /^[a-zA-Z]*$/;
+  const regex = /^[a-zA-Z ]*$/;
   if (regex.test(nameStr)) {
     return true;
   }
