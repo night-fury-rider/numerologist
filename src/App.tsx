@@ -18,8 +18,8 @@ function App() {
     {
       key: 'dashboard',
       title: 'Lucky Name',
-      focusedIcon: 'currency-inr',
-      unfocusedIcon: 'currency-inr',
+      focusedIcon: 'atom',
+      unfocusedIcon: 'atom',
     },
 
     {
