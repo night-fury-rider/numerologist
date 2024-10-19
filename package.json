@@ -17,6 +17,7 @@
     "@uv-tech/util": "1.0.11",
     "react": "18.3.1",
     "react-native": "0.75.2",
+    "react-native-date-picker": "5.0.7",
     "react-native-device-info": "10.12.0",
     "react-native-mmkv": "2.10.2",
     "react-native-paper": "5.12.5",

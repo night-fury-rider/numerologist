@@ -38,6 +38,19 @@ export const DASHBOARD = {
   },
 };
 
+export const BIRTHDAY = {
+  emptyMsg: 'Birthday is coming Soon',
+  comingSoon: 'Birthday is coming Soon',
+  result: {
+    mulyank: {
+      label: 'Mulyank',
+      subtitle: 'Clarification',
+    },
+    label: 'Lucky Number',
+    subtitle: 'Clarification',
+  },
+};
+
 export const SETTINGS = {
   title: 'Settings',
   comingSoon: 'Settings are coming soon',
