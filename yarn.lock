@@ -7368,6 +7368,7 @@ __metadata:
     prettier: "npm:2.8.8"
     react: "npm:18.3.1"
     react-native: "npm:0.75.2"
+    react-native-date-picker: "npm:5.0.7"
     react-native-device-info: "npm:10.12.0"
     react-native-mmkv: "npm:2.10.2"
     react-native-paper: "npm:5.12.5"
@@ -8073,6 +8074,16 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 10/73b36281e58eeb27c9cc6031301b6ae19ecdc9f18ae2d518bdb39b0ac564e65c5779405d623f1df9abf378a13858b79442480244bd579968afc1faf9a2ce5e05
+  languageName: node
+  linkType: hard
+
+"react-native-date-picker@npm:5.0.7":
+  version: 5.0.7
+  resolution: "react-native-date-picker@npm:5.0.7"
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+  checksum: 10/e1ae4ac7b864c6934c8537d2dee1984e85f8fb028824b8fe51b79ab424dcc0003756e4d063f6520d8ec2d62dc87c7cd52390cc44d4d48e542128e8438f6d3478
   languageName: node
   linkType: hard
 

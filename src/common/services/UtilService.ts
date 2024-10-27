@@ -3,6 +3,16 @@
 const getClonedObject = (sourceObj: any) =>
   JSON.parse(JSON.stringify(sourceObj));
 
+const getDateString = (
+  dateObj: Date,
+  dateFormat?: Intl.DateTimeFormatOptions,
+): string =>
+  `${dateObj.toLocaleDateString('en-gb', {
+    day: dateFormat?.day || '2-digit',
+    month: dateFormat?.month || 'short',
+    year: dateFormat?.year || 'numeric',
+  })}`;
+
 const isValidName = (nameStr: string) => {
   // Regular expression to allow only alphabets
   const regex = /^[a-zA-Z ]*$/;
@@ -13,4 +23,4 @@ const isValidName = (nameStr: string) => {
   return false;
 };
 
-export {getClonedObject, isValidName};
+export {getClonedObject, getDateString, isValidName};

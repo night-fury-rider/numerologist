@@ -22,6 +22,7 @@ module.exports = {
           $network: './src/common/network',
           $redux: './src/common/redux',
           $dashboard: './src/dashboard',
+          $birthday: './src/birthday',
           $settings: './src/settings',
         },
       },

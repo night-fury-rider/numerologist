@@ -5,6 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import ErrorBoundary from '$common/components/ErrorBoundary';
 import StorageService from '$common/services/StorageService';
 import DashboardScreen from '$dashboard/DashboardScreen';
+import BirthdayScreen from '$birthday/BirthdayScreen';
 import SettingsScreen from '$settings/SettingsScreen';
 import {SETTINGS} from '$common/constants/strings.constants';
 
@@ -17,11 +18,16 @@ function App() {
   const [routes] = React.useState([
     {
       key: 'dashboard',
-      title: 'Lucky Name',
-      focusedIcon: 'atom',
-      unfocusedIcon: 'atom',
+      title: 'Name',
+      focusedIcon: 'account-outline',
+      unfocusedIcon: 'account-outline',
     },
-
+    {
+      key: 'birthday',
+      title: 'Birthday',
+      focusedIcon: 'cake-variant-outline',
+      unfocusedIcon: 'cake-variant-outline',
+    },
     {
       key: 'settings',
       title: 'Settings',
@@ -32,12 +38,13 @@ function App() {
 
   const renderScene = BottomNavigation.SceneMap({
     dashboard: DashboardScreen,
+    birthday: BirthdayScreen,
     settings: SettingsScreen,
   });
 
   const renderAppBar = () => {
     // Only show Appbar for Settings Screen
-    if (index === 1) {
+    if (index === routes.length - 1) {
       return (
         <Appbar.Header>
           <Appbar.Content title={SETTINGS.title} />
