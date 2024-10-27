@@ -41,9 +41,14 @@ export const DASHBOARD = {
 export const BIRTHDAY = {
   emptyMsg: 'Birthday is coming Soon',
   comingSoon: 'Birthday is coming Soon',
+  changeDate: 'Change Date',
   result: {
     mulyank: {
       label: 'Mulyank',
+      subtitle: 'Clarification',
+    },
+    bhagyank: {
+      label: 'Bhagyank',
       subtitle: 'Clarification',
     },
     label: 'Lucky Number',

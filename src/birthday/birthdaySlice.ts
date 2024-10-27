@@ -1,54 +1,28 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 
-import {TItem, TDashboardState} from '$dashboard/dashboard.types';
+import {TBirthdayState} from '$birthday/birthday.types';
 
-const initialState: TDashboardState = {
-  items: [],
-  filteredItems: [], // Used in dashboard screen only
-  selectedItems: [],
+const initialState: TBirthdayState = {
+  history: [],
   lastModifiedTime: Date.now(),
 };
 
-/**
- * @description Updates the main items array & filtered items array/
- */
-const _setItems = (state: TDashboardState, action: PayloadAction<TItem[]>) => {
-  state.items = action.payload;
-  state.filteredItems = action.payload;
-  state.lastModifiedTime = Date.now();
-};
-
-const _filterItems = (
-  state: TDashboardState,
-  action: PayloadAction<TItem[]>,
+const _setHistory = (
+  state: TBirthdayState,
+  action: PayloadAction<string[]>,
 ) => {
-  state.filteredItems = action.payload;
+  state.history = action.payload;
 };
 
-const _resetFilters = (state: TDashboardState) => {
-  state.filteredItems = state.items;
-};
-
-const _selectItems = (
-  state: TDashboardState,
-  action: PayloadAction<TItem[]>,
-) => {
-  state.selectedItems = action.payload;
-};
-
-export const dashboardSlice = createSlice({
-  name: 'dashboard',
+export const birthdaySlice = createSlice({
+  name: 'birthday',
   initialState,
   reducers: {
-    setItems: _setItems, // Used in case of update/delete item
-    setFilteredItems: _filterItems,
-    resetFilters: _resetFilters,
-    selectItems: _selectItems,
+    setHistory: _setHistory, // Used in case of update/delete
   },
 });
 
-export const {setItems, setFilteredItems, resetFilters, selectItems} =
-  dashboardSlice.actions;
+export const {setHistory} = birthdaySlice.actions;
 
-export default dashboardSlice.reducer;
+export default birthdaySlice.reducer;

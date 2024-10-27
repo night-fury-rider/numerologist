@@ -12,20 +12,32 @@ import DatePicker from 'react-native-date-picker';
 // TODO: Use specific type instead of any
 const BirthdayScreen = ({navigation}: any) => {
   const theme = useTheme();
-  const previousDate = new Date(`1980-06-01`);
+  // const previousDate = useAppSelector(state => state.birthday.history[0]);
+  const previousDate = new Date();
   const [birthdate, setBirthdate] = useState(previousDate);
   const [open, setOpen] = useState(false);
-  const [dateString, setDateString] = useState(getDateString(previousDate));
+  const [dateString, setDateString] = useState(BIRTHDAY.changeDate);
 
   const [mulyank, setMulyank] = useState(0);
+  const [mulyankClarification, setMulyankClarification] = useState(``);
+  const [bhagyank, setBhagyank] = useState(0);
+  const [isFirstRender, setFirstRender] = useState(true);
 
   useEffect(() => {
-    const newMulyank =
-      getNumericSumValue(birthdate.getDate()) +
+    if (isFirstRender) {
+      setFirstRender(false);
+    }
+    const newMulyank = getNumericSumValue(birthdate.getDate());
+    const newBhagyank =
+      newMulyank +
       getNumericSumValue(birthdate.getDate() + 1) +
       getNumericSumValue(birthdate.getDay());
     setMulyank(newMulyank);
-    setDateString(getDateString(birthdate));
+    setMulyankClarification(`${birthdate.getDate()}`.split('').join('+'));
+    setBhagyank(newBhagyank);
+    if (!isFirstRender) {
+      setDateString(getDateString(birthdate));
+    }
   }, [birthdate]);
 
   const styles = getStyles(
@@ -40,8 +52,12 @@ const BirthdayScreen = ({navigation}: any) => {
       <View style={styles.container}>
         <View style={styles.row}>
           <Chip
-            icon="information"
-            style={styles.dateString}
+            icon={() => <IconButton icon="cake-variant-outline" size={25} />}
+            style={[styles.dateString, {}]}
+            textStyle={{
+              lineHeight: 22,
+              fontSize: 22,
+            }}
             onPress={() => setOpen(true)}>
             {dateString}
           </Chip>
@@ -51,6 +67,7 @@ const BirthdayScreen = ({navigation}: any) => {
             date={birthdate}
             mode="date"
             onConfirm={newDate => {
+              console.log(`onConfirm Fired`);
               setOpen(false);
               setBirthdate(newDate);
             }}
@@ -60,12 +77,13 @@ const BirthdayScreen = ({navigation}: any) => {
           />
           <IconButton
             icon="calendar-month-outline"
-            size={20}
+            size={30}
             onPress={() => setOpen(true)}
             style={styles.dateSelection}
           />
         </View>
 
+        {/* Mulyank */}
         <View style={styles.resultContainer}>
           <Card style={styles.card}>
             <Card.Content>
@@ -73,9 +91,27 @@ const BirthdayScreen = ({navigation}: any) => {
               <Text style={styles.data} variant="displayLarge">
                 {mulyank}
               </Text>
+              {mulyankClarification ? (
+                <Text style={styles.subtitle}>
+                  {DASHBOARD.result.subtitle + ' '}
+                  {mulyankClarification}
+                </Text>
+              ) : null}
+            </Card.Content>
+          </Card>
+        </View>
+
+        {/* Bhagyank */}
+        <View style={styles.resultContainer}>
+          <Card style={styles.card}>
+            <Card.Content>
+              <Text style={styles.title}>{BIRTHDAY.result.bhagyank.label}</Text>
+              <Text style={styles.data} variant="displayLarge">
+                {bhagyank}
+              </Text>
               <Text style={styles.subtitle}>
                 {DASHBOARD.result.subtitle + ' '}
-                {getNumericSumValue(birthdate.getDay() + 1)}+
+                {getNumericSumValue(birthdate.getDate())}+
                 {getNumericSumValue(birthdate.getMonth() + 1)}+
                 {getNumericSumValue(birthdate.getFullYear())}
               </Text>
@@ -109,14 +145,7 @@ const getStyles = (
     dateString: {
       flex: 3,
     },
-    dateSelection: {
-      borderColor: 'green',
-      borderWidth: 2,
-    },
-    scoreField: {},
-    resultRow: {
-      marginBottom: 30,
-    },
+    dateSelection: {},
     resultContainer: {
       flexGrow: 2,
       backgroundColor: resultContainerBackgroundColor,
