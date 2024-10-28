@@ -81,9 +81,9 @@ android {
     def versionPatch = 1
     def versionBuild = 0 // version bump for public betas
 
-    namespace "com.yuvrajpatil.apps.numerology.name"
+    namespace "com.yuvrajpatil.apps.numerologist"
     defaultConfig {
-        applicationId "com.yuvrajpatil.apps.numerology.name"
+        applicationId "com.yuvrajpatil.apps.numerologist"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode versionMajor * 1000000  + versionMinor * 10000 + versionPatch * 100 + versionBuild

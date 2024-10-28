@@ -1,4 +1,4 @@
-package com.yuvrajpatil.apps.numerology.name
+package com.yuvrajpatil.apps.numerologist
 
 import android.app.Application
 import com.facebook.react.PackageList
