@@ -5,16 +5,14 @@ It is a React Native app developed for numerology assist.
 <p>
   <pre><img src="https://github.com/user-attachments/assets/7775da0a-6bb7-42e9-8035-bf20b4f6ecdf" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/ccd8001b-6dda-4905-8526-f92660c87d0e" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/a3f544fd-6f3f-4dd1-b872-5153f7c0a161" width="200" height="400" alt=""/></pre>
 </p>
-
-<br/><br/>
+***
 
 # Technologies and Libraries Used
 
 - [React Native 0.75.2](https://reactnative.dev/)
 - [React 18.3.1](https://reactjs.org/)
 - [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
-
-  <br/><br/>
+***
 
 # Getting Started
 
@@ -45,50 +43,20 @@ yarn android
 - Enter IP v4 (from step 1) and port number (Generally 8081). Ex. `172.1.1.2:8081`
 - Shake the mobile to open the React Native Dev menu .
 - Select Reload. Now hot reload should work.
+***
 
-  <br/><br/>
 
 # Create the release build
-
-- Make sure that `my-upload-key.keystore` file is kept under the `android/app` directory
-- Make sure that `gradle.properties` file is kept under the `.gradle` directory. In Windows, `.gradle` directory is under `C:\Users\<username>`.
-- Increment `version` in `package.json`.
-- Increment `versionMajor` or `versionMinor` or `versionPatch` in `android/app/build.gradle`
-- Create the apk build.
-
-```
-yarn run android-build-apk
-```
-
-- Uninstall the app from device (from work profile as well if available). Connect the device using USB.
-- Install the apk file onto device
-
-```
-adb -s <device_name> install android/app/build/outputs/apk/release/app-release.apk
-```
-
-- Complete the sanity testing and capture the screenshots.
-- Update the screenshots in this README.
-- Capture the home screen screenshot on emulator with Nexus_7_API_33.
-- Capture the home screen screenshot on emulator with Nexus_10_API_33.
-- Create a [release on Github](https://github.com/night-fury-rider/name-numerology/releases). Use [Github filter](https://github.com/night-fury-rider/name-numerology/compare/v0.0.1...main) for extracting data for release notes.
-- Create the release build (aab build).
-
-```
-yarn run android-build
-```
-
-<br/><br/>
+https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
+***
 
 # Deploy the App on PlayStore
-
 1. Login into [Developer Console Account](https://play.google.com/console/developers)
 2. Select the app from the App list. It should open the App Dashboard.
 3. Select `Production` (which is under `Release`) from the sidebar.
 4. Click on `Create new release` which is on the right top. It would open `Create production release`.
 5. Upload the build file and follow the instructions.
-   <br/><br/>
+***
 
 # Disclaimer
-
-I don't believe in numerology. I have created this app for people who believe in Numerologist
+I don't believe in Numerology. I have created this app for people who believe in Numerology.
