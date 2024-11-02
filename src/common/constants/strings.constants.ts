@@ -21,8 +21,6 @@ export const COMMON = {
 };
 
 export const DASHBOARD = {
-  emptyMsg: 'Dashboard is coming Soon',
-  comingSoon: 'Dashboard is coming Soon',
   firstName: {
     label: 'First Name',
   },
@@ -39,8 +37,6 @@ export const DASHBOARD = {
 };
 
 export const BIRTHDAY = {
-  emptyMsg: 'Birthday is coming Soon',
-  comingSoon: 'Birthday is coming Soon',
   changeDate: 'Change Date',
   result: {
     mulyank: {
@@ -58,12 +54,5 @@ export const BIRTHDAY = {
 
 export const SETTINGS = {
   title: 'Settings',
-  comingSoon: 'Settings are coming soon',
   appVersion: 'App Version',
-  chooseColorTheme: 'Choose Color Theme',
-};
-
-export const TOOLS = {
-  title: 'Tools',
-  comingSoon: 'Tools are coming soon',
 };
