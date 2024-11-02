@@ -2,9 +2,22 @@
 
 It is a React Native app developed for numerology assist.
 
+This app has following features:
+<pre>
+✔️ Know the Lucky Name Number.
+✔️ Know your Mulyank (Life Path Number)
+✔️ Know your Bhagyank (Destiny Number)
+</pre>
+
+
+
 <p>
   <pre><img src="https://github.com/user-attachments/assets/7775da0a-6bb7-42e9-8035-bf20b4f6ecdf" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/ccd8001b-6dda-4905-8526-f92660c87d0e" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/a3f544fd-6f3f-4dd1-b872-5153f7c0a161" width="200" height="400" alt=""/></pre>
 </p>
+
+
+
+
 ***
 
 # Technologies and Libraries Used
