@@ -1,7 +1,9 @@
-import Badge from 'common/components/Badge';
 import {StyleSheet, View} from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 import {List, Divider, useTheme} from 'react-native-paper';
+
+import Badge from '$common/components/Badge';
+import {SETTINGS} from '$common/constants/strings.constants';
 
 const SettingsScreen = () => {
   const theme = useTheme();
@@ -12,13 +14,9 @@ const SettingsScreen = () => {
     <View style={[styles.container]}>
       <Divider />
       <List.Item
-        title="App Version"
+        title={SETTINGS.appVersion}
         left={props => (
-          <List.Icon
-            {...props}
-            icon="information"
-            style={{display: 'flex', marginHorizontal: 10}}
-          />
+          <List.Icon {...props} icon="information" style={styles.rightIcon} />
         )}
         onPress={() => {}}
         right={() => (
@@ -54,6 +52,7 @@ const getStyles = (containerBackgroundColor: string) =>
     rightContainer: {
       justifyContent: 'center',
     },
+    rightIcon: {display: 'flex', marginHorizontal: 10},
   });
 
 export default SettingsScreen;
