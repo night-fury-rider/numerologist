@@ -1,21 +1,22 @@
 import {useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {Card, Chip, IconButton, Text, useTheme} from 'react-native-paper';
+import DatePicker from 'react-native-date-picker';
+import {Card, Text, useTheme} from 'react-native-paper';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
+import DateRow from '$common/components/DateRow';
 import {COLORS} from '$common/constants/colors.constants';
 import {BIRTHDAY, DASHBOARD} from '$common/constants/strings.constants';
 import {getDateString} from '$common/services/UtilService';
 import {getNumericSumValue} from '$dashboard/DashboardService';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import DatePicker from 'react-native-date-picker';
 
 // TODO: Use specific type instead of any
-const BirthdayScreen = ({navigation}: any) => {
+const BirthdayScreen = () => {
   const theme = useTheme();
   // const previousDate = useAppSelector(state => state.birthday.history[0]);
   const previousDate = new Date();
   const [birthdate, setBirthdate] = useState(previousDate);
-  const [open, setOpen] = useState(false);
+  const [isDatePickerOpen, setDatePickerOpen] = useState(false);
   const [dateString, setDateString] = useState(BIRTHDAY.changeDate);
 
   const [mulyank, setMulyank] = useState(0);
@@ -47,38 +48,30 @@ const BirthdayScreen = ({navigation}: any) => {
     theme.colors.secondary,
   );
 
+  const handleChangeDate = (newDate: Date) => {
+    setDatePickerOpen(false);
+    setBirthdate(newDate);
+  };
+
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <View style={styles.row}>
-          <Chip
-            icon={() => <IconButton icon="cake-variant-outline" size={25} />}
-            style={[styles.dateString, {}]}
-            textStyle={{
-              lineHeight: 22,
-              fontSize: 22,
-            }}
-            onPress={() => setOpen(true)}>
-            {dateString}
-          </Chip>
+        <View style={styles.dateContainer}>
+          <DateRow
+            dateStr={dateString}
+            onChangeDate={() => setDatePickerOpen(true)}
+          />
           <DatePicker
             modal
-            open={open}
+            open={isDatePickerOpen}
             date={birthdate}
             mode="date"
             onConfirm={newDate => {
-              setOpen(false);
-              setBirthdate(newDate);
+              handleChangeDate(newDate);
             }}
             onCancel={() => {
-              setOpen(false);
+              setDatePickerOpen(false);
             }}
-          />
-          <IconButton
-            icon="calendar-month-outline"
-            size={30}
-            onPress={() => setOpen(true)}
-            style={styles.dateSelection}
           />
         </View>
 
@@ -134,17 +127,11 @@ const getStyles = (
       marginTop: 30,
       rowGap: 25,
     },
-    row: {
-      alignItems: 'center',
-      columnGap: 10,
-      display: 'flex',
-      flexDirection: 'row',
-      marginHorizontal: 10,
-    },
-    dateString: {
+    dateContainer: {
       flex: 3,
+      backgroundColor: '#f5f5f5',
+      justifyContent: 'center',
     },
-    dateSelection: {},
     resultContainer: {
       flexGrow: 2,
       backgroundColor: resultContainerBackgroundColor,
