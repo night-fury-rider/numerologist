@@ -42,22 +42,9 @@ function App() {
     settings: SettingsScreen,
   });
 
-  const renderAppBar = () => {
-    // Only show Appbar for Settings Screen
-    if (index === routes.length - 1) {
-      return (
-        <Appbar.Header>
-          <Appbar.Content title={SETTINGS.title} />
-        </Appbar.Header>
-      );
-    }
-    return null; // Don't render Appbar for other screens
-  };
-
   return (
     <ErrorBoundary>
       <SafeAreaProvider>
-        {renderAppBar()}
         <BottomNavigation
           navigationState={{index, routes}}
           onIndexChange={setIndex}
