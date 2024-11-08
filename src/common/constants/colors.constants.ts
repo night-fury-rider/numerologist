@@ -9,6 +9,8 @@ export const COLORS = {
 };
 
 export const LIGHT_COLORS = {
+  background9: '#f5f5f5', // Background of Menu item of Settings Screen.
+
   danger1: '#D63D39',
   danger2: 'red',
   danger3: 'red',
@@ -61,6 +63,8 @@ export const ORANGE_COLOR_THEME = {
 };
 
 export const DARK_COLORS = {
+  background9: '#8D8D8D', // Background of Menu item of Settings Screen.
+
   danger1: '#fd5c63',
   danger2: 'red',
   danger3: 'red',
