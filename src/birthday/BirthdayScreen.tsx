@@ -67,7 +67,6 @@ const BirthdayScreen = ({navigation}: any) => {
             date={birthdate}
             mode="date"
             onConfirm={newDate => {
-              console.log(`onConfirm Fired`);
               setOpen(false);
               setBirthdate(newDate);
             }}
