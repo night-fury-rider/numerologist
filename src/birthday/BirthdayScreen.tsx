@@ -117,7 +117,7 @@ const BirthdayScreen = () => {
 
 const getStyles = (
   resultContainerBackgroundColor: string,
-  resultTitleBackgroundColor: string,
+  resultTitleColor: string,
   resultDataBackgroundColor: string,
   resultSubtitleBackgroundColor: string,
 ) =>
@@ -129,7 +129,6 @@ const getStyles = (
     },
     dateContainer: {
       flex: 3,
-      backgroundColor: '#f5f5f5',
       justifyContent: 'center',
     },
     resultContainer: {
@@ -144,7 +143,7 @@ const getStyles = (
       padding: 16,
     },
     title: {
-      color: resultTitleBackgroundColor,
+      color: resultTitleColor,
       fontSize: 20,
       fontWeight: 'bold',
       textAlign: 'center',

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Card, Text, IconButton} from 'react-native-paper';
+import {Card, Text, IconButton, useTheme} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {BIRTHDAY} from '$common/constants/strings.constants';
@@ -11,6 +11,9 @@ interface DateRowProps {
 }
 
 const DateRow: React.FC<DateRowProps> = ({dateStr, onChangeDate}) => {
+  const theme = useTheme();
+
+  const styles = getStyles(theme.colors.secondary);
   return (
     <Card style={styles.card}>
       <View style={styles.row}>
@@ -37,27 +40,29 @@ const DateRow: React.FC<DateRowProps> = ({dateStr, onChangeDate}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  card: {
-    margin: 10,
-    padding: 10,
-    borderRadius: 8,
-    elevation: 3,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  dateText: {
-    flex: 1,
-    textAlign: 'center',
-    fontSize: 26,
-    color: '#333',
-  },
-  iconButton: {
-    padding: 0,
-  },
-});
+const getStyles = (dateStringColor: string) =>
+  StyleSheet.create({
+    card: {
+      margin: 10,
+      padding: 10,
+      borderRadius: 8,
+      elevation: 3,
+    },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+    },
+    dateText: {
+      flex: 1,
+      textAlign: 'center',
+      fontSize: 26,
+      color: dateStringColor,
+      fontWeight: 'bold',
+    },
+    iconButton: {
+      padding: 0,
+    },
+  });
 
 export default DateRow;
