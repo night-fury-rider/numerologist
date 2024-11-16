@@ -25,6 +25,9 @@ This app has following features:
 - [React Native 0.75.2](https://reactnative.dev/)
 - [React 18.3.1](https://reactjs.org/)
 - [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
+- [React Native Date Picker 5.0.7](https://github.com/henninghall/react-native-date-picker)
+
+
 ***
 
 # Getting Started
