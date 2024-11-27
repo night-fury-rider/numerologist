@@ -25,6 +25,9 @@ This app has following features:
 - [React Native 0.75.2](https://reactnative.dev/)
 - [React 18.3.1](https://reactjs.org/)
 - [React Native Paper 5.12.3](https://callstack.github.io/react-native-paper/)
+- [React Native Date Picker 5.0.7](https://github.com/henninghall/react-native-date-picker)
+
+
 ***
 
 # Getting Started
@@ -64,11 +67,8 @@ https://github.com/night-fury-rider/react-native-template/wiki/Create-the-releas
 ***
 
 # Deploy the App on PlayStore
-1. Login into [Developer Console Account](https://play.google.com/console/developers)
-2. Select the app from the App list. It should open the App Dashboard.
-3. Select `Production` (which is under `Release`) from the sidebar.
-4. Click on `Create new release` which is on the right top. It would open `Create production release`.
-5. Upload the build file and follow the instructions.
+https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
+
 ***
 
 # Disclaimer
