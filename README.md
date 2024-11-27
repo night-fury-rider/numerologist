@@ -12,10 +12,8 @@ This app has following features:
 
 
 <p>
-  <pre><img src="https://github.com/user-attachments/assets/7775da0a-6bb7-42e9-8035-bf20b4f6ecdf" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/ccd8001b-6dda-4905-8526-f92660c87d0e" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/a3f544fd-6f3f-4dd1-b872-5153f7c0a161" width="200" height="400" alt=""/></pre>
+  <pre> <img src="https://github.com/user-attachments/assets/4a90f675-d8d0-4ecd-8dda-5cef89225c81" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/59d258cd-48f2-4a9b-a0a6-5e6495428601" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/6cb2f6b1-3a9f-4fb3-8902-610c8fa8e0a7" width="200" height="400" alt=""/></pre>
 </p>
-
-
 
 
 ***
