@@ -1,6 +1,6 @@
 # Numerologist
 
-It is a React Native app developed for numerology assist.
+It is a React Native app developed for numerology assist. It provides personalized numerology readings and insights based on your birthdate and name to help guide your life decisions and reveal hidden patterns.
 
 This app has following features:
 <pre>
@@ -70,4 +70,5 @@ https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on
 ***
 
 # Disclaimer
-I don't believe in Numerology. I have created this app for people who believe in Numerology.
+I don't personally believe in numerology, but I created this app for those who do.
+
