@@ -1,5 +1,5 @@
 import React from 'react';
-import {Appbar, BottomNavigation, useTheme} from 'react-native-paper';
+import {BottomNavigation, useTheme} from 'react-native-paper';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import ErrorBoundary from '$common/components/ErrorBoundary';
@@ -7,7 +7,6 @@ import StorageService from '$common/services/StorageService';
 import DashboardScreen from '$dashboard/DashboardScreen';
 import BirthdayScreen from '$birthday/BirthdayScreen';
 import SettingsScreen from '$settings/SettingsScreen';
-import {SETTINGS} from '$common/constants/strings.constants';
 
 StorageService.init();
 
