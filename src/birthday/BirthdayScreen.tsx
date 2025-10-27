@@ -22,20 +22,32 @@ const BirthdayScreen = () => {
   const [mulyank, setMulyank] = useState(0);
   const [mulyankClarification, setMulyankClarification] = useState(``);
   const [bhagyank, setBhagyank] = useState(0);
+  const [bhagyankClarification, setBhagyankClarification] = useState(``);
   const [isFirstRender, setFirstRender] = useState(true);
 
   useEffect(() => {
     if (isFirstRender) {
       setFirstRender(false);
     }
-    const newMulyank = getNumericSumValue(birthdate.getDate());
-    const newBhagyank =
-      newMulyank +
-      getNumericSumValue(birthdate.getDate() + 1) +
-      getNumericSumValue(birthdate.getDay());
-    setMulyank(newMulyank);
+
+    const numerologyDay = getNumericSumValue(birthdate.getDate());
+    const numerologyMonth = getNumericSumValue(birthdate.getMonth() + 1);
+    const numerologyYear = getNumericSumValue(birthdate.getFullYear());
+
+    let newBhagyank = numerologyDay + numerologyMonth + numerologyYear;
+
+    let newBhagyankClarification = `${DASHBOARD.result.subtitle} ${numerologyDay}+${numerologyMonth}+${numerologyYear}`;
+
+    if (newBhagyank > 9) {
+      newBhagyank = getNumericSumValue(newBhagyank);
+    }
+
+    setMulyank(numerologyDay);
     setMulyankClarification(`${birthdate.getDate()}`.split('').join('+'));
+
     setBhagyank(newBhagyank);
+    setBhagyankClarification(newBhagyankClarification);
+
     if (!isFirstRender) {
       setDateString(getDateString(birthdate));
     }
@@ -101,12 +113,7 @@ const BirthdayScreen = () => {
               <Text style={styles.data} variant="displayLarge">
                 {bhagyank}
               </Text>
-              <Text style={styles.subtitle}>
-                {DASHBOARD.result.subtitle + ' '}
-                {getNumericSumValue(birthdate.getDate())}+
-                {getNumericSumValue(birthdate.getMonth() + 1)}+
-                {getNumericSumValue(birthdate.getFullYear())}
-              </Text>
+              <Text style={styles.subtitle}>{bhagyankClarification}</Text>
             </Card.Content>
           </Card>
         </View>
