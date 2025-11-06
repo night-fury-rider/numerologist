@@ -30,20 +30,30 @@ This app has following features:
 
 ---
 
-# Getting Started
-
-## Prerequisite
+# Prerequisite
 
 - Mobile with USB debugging enabled
 - Mobile and laptop are on the same wifi.
 
-## Install the app on mobile
+# Create the dev build
+
+```
+yarn testmode
+```
+
+# Create the prod build
+
+```
+yarn prodmode
+```
+
+# Install the app on mobile
 
 ```
 yarn android
 ```
 
-## Enable Wireless hot reload
+# Enable Wireless hot reload
 
 - Run `adb devices` to get Mobile device name.
 - Run `ipconfig` to get the IP (v4).

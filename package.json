@@ -10,8 +10,10 @@
     "clean-watchman": "watchman watch-del-all && watchman shutdown-server",
     "ios": "react-native run-ios",
     "lint": "eslint .",
+    "prodmode": "node scripts/switchAppMode.js prod",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "testmode": "node scripts/switchAppMode.js test"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.9.7",
