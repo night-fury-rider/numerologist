@@ -38,19 +38,19 @@ This app has following features:
 # Create the dev build
 
 ```
-yarn testmode
+npm run testmode
 ```
 
 # Create the prod build
 
 ```
-yarn prodmode
+npm run prodmode
 ```
 
 # Install the app on mobile
 
 ```
-yarn android
+npm run android
 ```
 
 # Enable Wireless hot reload
@@ -61,7 +61,7 @@ yarn android
 - Install the app
 
 ```
-yarn android
+npm android
 ```
 
 - Disconnect mobile from USB. Metro bundler will be disconnected.
