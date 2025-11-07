@@ -1,7 +1,7 @@
 // This file is inteneded to contain data storage related services.
 // Use wrapper for every method in such a way that if in future we need to change the storage vendor, changes should happpen in this file only.
 
-import {MMKV} from 'react-native-mmkv';
+import {createMMKV} from 'react-native-mmkv';
 
 import LoggerService from '$common/services/LoggerService';
 
@@ -9,7 +9,7 @@ const StorageService = (() => {
   let storage: any = null;
   const init = () => {
     if (storage === null) {
-      storage = new MMKV();
+      storage = createMMKV();
     }
   };
 
@@ -51,7 +51,7 @@ const StorageService = (() => {
     if (storage === null) {
       return;
     }
-    storage.delete(storeKey);
+    storage.remove(storeKey);
   };
 
   const clearAll = () => {

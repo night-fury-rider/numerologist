@@ -58,6 +58,7 @@ function App() {
               ? theme.colors.surface
               : theme.colors.onPrimary,
           }}
+          keyboardHidesNavigationBar={false}
         />
       </SafeAreaProvider>
     </ErrorBoundary>

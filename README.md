@@ -20,12 +20,12 @@ This app has following features:
 
 | Library                                                                              | Version |
 | ------------------------------------------------------------------------------------ | ------- |
-| [React Native](https://reactnative.dev/)                                             | v0.75   |
-| [React](https://reactjs.org/)                                                        | v18     |
+| [React Native](https://reactnative.dev/)                                             | v0.82   |
+| [React](https://reactjs.org/)                                                        | v19     |
 | [React Native Paper](https://callstack.github.io/react-native-paper/)                | v5      |
 | [React Native Date Picker](https://github.com/henninghall/react-native-date-picker)  | v5      |
 | [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons) | v10     |
-| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                   | v2      |
+| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                   | v4      |
 | [Babel Module Resolver](https://www.npmjs.com/package/babel-plugin-module-resolver)  | v5      |
 
 ---
@@ -38,19 +38,19 @@ This app has following features:
 # Create the dev build
 
 ```
-yarn testmode
+npm run testmode
 ```
 
 # Create the prod build
 
 ```
-yarn prodmode
+npm run prodmode
 ```
 
 # Install the app on mobile
 
 ```
-yarn android
+npm run android
 ```
 
 # Enable Wireless hot reload
@@ -61,7 +61,7 @@ yarn android
 - Install the app
 
 ```
-yarn android
+npm android
 ```
 
 - Disconnect mobile from USB. Metro bundler will be disconnected.
