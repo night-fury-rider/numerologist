@@ -5,6 +5,7 @@
     "importHelpers": true,
     "paths": {
       "*": ["src/*"],
+      "$root/*": ["./*"],
       "$common/*": ["src/common/*"],
       "$components/*": ["src/common/components/*"],
       "$constants/*": ["src/common/constants/*"],

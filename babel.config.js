@@ -14,6 +14,7 @@ module.exports = {
           '.json',
         ],
         alias: {
+          $root: './',
           $common: './src/common',
           $components: './src/common/components',
           $constants: './src/common/constants',
