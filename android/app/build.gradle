@@ -77,8 +77,8 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
     def versionMajor = 0
-    def versionMinor = 0
-    def versionPatch = 4
+    def versionMinor = 1
+    def versionPatch = 0
     def versionBuild = 0 // version bump for public betas
 
     namespace "com.yuvrajpatil.apps.numerologist"
