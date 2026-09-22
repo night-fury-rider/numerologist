@@ -24,6 +24,9 @@ export const DASHBOARD = {
   firstName: {
     label: 'First Name',
   },
+  instruction: {
+    label: 'Enter your full name to calculate your lucky number',
+  },
   middleName: {
     label: 'Middle Name',
   },
@@ -33,6 +36,9 @@ export const DASHBOARD = {
   result: {
     label: 'Lucky Number',
     subtitle: 'Clarification',
+  },
+  title: {
+    label: 'Numerology',
   },
 };
 

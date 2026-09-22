@@ -5,7 +5,6 @@ export const COLORS = {
   grey: 'grey',
   transparent: 'transparent',
   white: 'white',
-  purpleA400: '#6200ee',
 };
 
 export const LIGHT_COLORS = {
@@ -30,6 +29,7 @@ export const LIGHT_COLORS = {
 
 export const BLUE_COLOR_THEME = {
   ...LIGHT_COLORS,
+  accent1: '#1B76E2', // Dashboard --> Result number/highlight color
   background1: '#f8f9fd', // Main background color of app
   background2: '#dce8f4', // Dashboard --> Searchbar background color
   background3: '#d0e4ff', // Dashboard --> + icon background color
@@ -47,6 +47,7 @@ export const BLUE_COLOR_THEME = {
 
 export const ORANGE_COLOR_THEME = {
   ...LIGHT_COLORS,
+  accent1: '#9d4400', // matches orange theme's own accent, e.g. background6
   background1: '#fff8f5', // Main background color of app
   background2: '#f3e5dc', // Dashboard --> Searchbar background color
   background3: '#ffdbcb', // Dashboard --> + icon background color

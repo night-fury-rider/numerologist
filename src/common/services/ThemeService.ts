@@ -20,6 +20,25 @@ const getDefaultTheme = (themeName = COMMON.colorScheme.light as ThemeProp) => {
     colors: {
       ...DefaultTheme.colors,
       ...MD3LightTheme.colors,
+      primary: '#1B76E2',
+      onPrimary: '#FFFFFF',
+      primaryContainer: '#D6E3FF',
+      onPrimaryContainer: '#001C3B',
+
+      secondary: '#535F70',
+      onSecondary: '#FFFFFF',
+      secondaryContainer: '#D7E3F7',
+      onSecondaryContainer: '#101C2B',
+
+      background: '#FDFCFF',
+      onBackground: '#1A1C1E',
+
+      surface: '#FDFCFF',
+      onSurface: '#1A1C1E',
+      surfaceVariant: '#DFE2EB',
+      onSurfaceVariant: '#43474E',
+
+      outline: '#73777F',
     },
   };
 
