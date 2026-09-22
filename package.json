@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "android-build": "npx react-native build-android --mode=release",
-    "android-build-apk": "cd android && ./gradlew assembleRelease",
-    "android-build-apk-windows": "cd android && gradlew assembleRelease",
+    "android:aab": "cd android && ./gradlew clean && ./gradlew bundleRelease",
+    "android:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease",
+    "android:clean": "cd android && ./gradlew clean",
     "clean-watchman": "watchman watch-del-all && watchman shutdown-server",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "prodmode": "node scripts/switchAppMode.js prod",
+    "mode:prod": "node scripts/switch-app-mode.js prod",
+    "mode:sandbox": "node scripts/switch-app-mode.js sandbox",
     "start": "react-native start",
-    "test": "jest",
-    "testmode": "node scripts/switchAppMode.js test"
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-vector-icons/material-design-icons": "12.4.0",
