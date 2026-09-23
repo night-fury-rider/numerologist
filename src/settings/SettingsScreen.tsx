@@ -14,13 +14,12 @@ const SettingsScreen: React.FC = () => {
     <ScrollView
       style={styles.screen}
       contentContainerStyle={styles.scrollContent}>
-      {/* Header — same pattern as Dashboard / Birthday */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>{SETTINGS.title.label}</Text>
         <Text style={styles.headerSubtitle}>{SETTINGS.subTitle.label}</Text>
       </View>
 
-      <Card style={styles.groupCard} mode="elevated">
+      <Card style={styles.groupCard} mode="contained">
         <Card.Content style={styles.groupCardContent}>
           <SettingsRow
             iconName="information"
@@ -40,7 +39,7 @@ const SettingsRow: React.FC<{
   value?: string;
   onPress?: () => void;
   theme: ReturnType<typeof useTheme>;
-}> = ({iconName, label, value, onPress, theme}) => {
+}> = ({iconName, label, value, theme}) => {
   const styles = getStyles(theme);
 
   return (
@@ -86,6 +85,8 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     groupCard: {
       borderRadius: 20,
       backgroundColor: theme.colors.background7,
+      borderWidth: 1,
+      borderColor: theme.colors.background4,
     },
     groupCardContent: {
       paddingVertical: 4,
