@@ -11,9 +11,8 @@ This app has following features:
 </pre>
 
 <p>
-  <pre> <img src="https://github.com/user-attachments/assets/4a90f675-d8d0-4ecd-8dda-5cef89225c81" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/59d258cd-48f2-4a9b-a0a6-5e6495428601" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/6cb2f6b1-3a9f-4fb3-8902-610c8fa8e0a7" width="200" height="400" alt=""/></pre>
+  <pre> <img src="https://github.com/user-attachments/assets/17b29f5d-56d1-4b9a-8f62-ac48cf204628" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/4ff3a21f-8dd9-4d06-91c3-3671ea47274b" width="200" height="400" alt=""/>  <img src="https://github.com/user-attachments/assets/a471e8d8-d86e-4fbb-aa80-1ffb1b0a1a32" width="200" height="400" alt=""/></pre>
 </p>
-
 ---
 
 # Technologies and Libraries Used
