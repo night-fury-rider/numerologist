@@ -61,7 +61,7 @@ export const BIRTHDAY = {
     subtitle: 'Clarification',
   },
   title: {
-    label: 'Birth Date',
+    label: 'Birthday',
   },
 };
 
