@@ -64,7 +64,7 @@ const BirthdayScreen = () => {
         contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>{DASHBOARD.title.label}</Text>
+          <Text style={styles.headerTitle}>{BIRTHDAY.title.label}</Text>
           <Text style={styles.headerSubtitle}>
             {BIRTHDAY.instruction.label}
           </Text>
