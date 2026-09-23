@@ -44,6 +44,10 @@ export const DASHBOARD = {
 
 export const BIRTHDAY = {
   changeDate: 'Change Date',
+  instruction: {
+    label: 'Pick a date to see what it adds up to',
+    dateChange: 'Tap to change date',
+  },
   result: {
     mulyank: {
       label: 'Mulyank',
@@ -55,6 +59,9 @@ export const BIRTHDAY = {
     },
     label: 'Lucky Number',
     subtitle: 'Clarification',
+  },
+  title: {
+    label: 'Birth Date',
   },
 };
 
