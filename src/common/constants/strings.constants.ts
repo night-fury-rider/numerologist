@@ -66,6 +66,11 @@ export const BIRTHDAY = {
 };
 
 export const SETTINGS = {
-  title: 'Settings',
   appVersion: 'App Version',
+  subTitle: {
+    label: 'App info and preferences',
+  },
+  title: {
+    label: 'Settings',
+  },
 };
