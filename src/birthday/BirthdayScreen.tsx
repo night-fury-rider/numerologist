@@ -11,7 +11,6 @@ import {getNumericSumValue} from '$dashboard/DashboardService';
 // TODO: Use specific type instead of any
 const BirthdayScreen = () => {
   const theme = useTheme();
-  // const previousDate = useAppSelector(state => state.birthday.history[0]);
   const previousDate = new Date();
   const [birthdate, setBirthdate] = useState(previousDate);
   const [isDatePickerOpen, setDatePickerOpen] = useState(false);
@@ -65,15 +64,15 @@ const BirthdayScreen = () => {
         contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>{BIRTHDAY.title?.label}</Text>
+          <Text style={styles.headerTitle}>{DASHBOARD.title.label}</Text>
           <Text style={styles.headerSubtitle}>
-            {BIRTHDAY.instruction?.label}
+            {BIRTHDAY.instruction.label}
           </Text>
         </View>
 
         <Card
           style={styles.heroCard}
-          mode="elevated"
+          mode="contained"
           onPress={() => setDatePickerOpen(true)}>
           <Card.Content style={styles.heroCardContent}>
             <View style={styles.heroDayCircle}>
@@ -106,10 +105,12 @@ const BirthdayScreen = () => {
           }}
         />
 
+        {/* Section label */}
         <Text style={styles.sectionLabel}>Your numbers</Text>
 
+        {/* Results — gold ring treatment, matching Dashboard's result badge */}
         <View style={styles.resultRow}>
-          <Card style={styles.resultCard} mode="elevated">
+          <Card style={styles.resultCard} mode="contained">
             <Card.Content style={styles.resultCardContent}>
               <Text style={styles.resultLabel}>
                 {BIRTHDAY.result.mulyank.label}
@@ -127,7 +128,7 @@ const BirthdayScreen = () => {
             </Card.Content>
           </Card>
 
-          <Card style={styles.resultCard} mode="elevated">
+          <Card style={styles.resultCard} mode="contained">
             <Card.Content style={styles.resultCardContent}>
               <Text style={styles.resultLabel}>
                 {BIRTHDAY.result.bhagyank.label}
@@ -175,10 +176,11 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
       opacity: 0.6,
     },
 
-    // Hero date card
     heroCard: {
       borderRadius: 24,
       backgroundColor: theme.colors.background7,
+      borderWidth: 1,
+      borderColor: theme.colors.background4,
     },
     heroCardContent: {
       flexDirection: 'row',
@@ -190,14 +192,14 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
       width: 72,
       height: 72,
       borderRadius: 36,
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.colors.primaryContainer,
       alignItems: 'center',
       justifyContent: 'center',
     },
     heroDayNumber: {
       fontSize: 28,
       fontWeight: '800',
-      color: theme.colors.onPrimary,
+      color: theme.colors.primary,
     },
     heroTextBlock: {
       flex: 1,
@@ -211,7 +213,7 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     heroMonthYear: {
       fontSize: 14,
       color: theme.colors.text1,
-      opacity: 0.7,
+      opacity: 0.6,
     },
     heroChangeHint: {
       fontSize: 12,
@@ -233,41 +235,44 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     resultCard: {
       flex: 1,
       borderRadius: 24,
-      backgroundColor: theme.colors.background5,
-      elevation: 4,
+      backgroundColor: theme.colors.background8,
+      borderWidth: 1,
+      borderColor: theme.colors.goldMuted,
     },
     resultCardContent: {
       alignItems: 'center',
-      paddingVertical: 28,
+      paddingVertical: 24,
       paddingHorizontal: 12,
-      rowGap: 14,
+      rowGap: 12,
     },
     resultLabel: {
-      fontSize: 14,
+      fontSize: 13,
       fontWeight: '600',
-      letterSpacing: 0.5,
-      textTransform: 'uppercase',
-      color: theme.colors.onPrimary,
-      opacity: 0.85,
+      color: theme.colors.text1,
+      opacity: 0.6,
       textAlign: 'center',
     },
     resultBadge: {
-      backgroundColor: theme.colors.onPrimary,
+      backgroundColor: theme.colors.goldMuted,
       borderRadius: 100,
-      width: 104,
-      height: 104,
+      width: 92,
+      height: 92,
       alignItems: 'center',
       justifyContent: 'center',
+      borderWidth: 2,
+      borderColor: theme.colors.gold,
     },
     resultNumber: {
       fontWeight: '800',
-      fontSize: 36,
-      color: theme.colors.background5,
+      fontSize: 32,
+      fontVariant: ['tabular-nums'],
+      color: theme.colors.gold,
     },
     resultFormula: {
       fontSize: 12,
-      color: theme.colors.onPrimary,
-      opacity: 0.85,
+      fontVariant: ['tabular-nums'],
+      color: theme.colors.text1,
+      opacity: 0.6,
       textAlign: 'center',
     },
   });
