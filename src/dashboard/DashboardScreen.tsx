@@ -1,6 +1,12 @@
 import {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {Card, Divider, Text, useTheme} from 'react-native-paper';
+import {
+  Card,
+  Divider,
+  Provider as PaperProvider,
+  Text,
+  useTheme,
+} from 'react-native-paper';
 
 import TextInput from '$common/components/AlphabetInput';
 import Badge from '$common/components/Badge';
@@ -13,6 +19,10 @@ import {
 
 // TODO: Use specific type instead of any
 const DashboardScreen = ({navigation}: any) => {
+  // theme.colors merges MD3 Paper tokens (primary, onPrimary, ...) AND
+  // this app's custom indigo/gold tokens (background1, background7,
+  // gold, goldMuted, text1, ...) via ThemeService.getTheme() — one
+  // source of truth, no local palette here.
   const theme = useTheme();
 
   const [firstName, setFirstName] = useState('');
@@ -82,63 +92,90 @@ const DashboardScreen = ({navigation}: any) => {
 
   const styles = getStyles(theme);
 
+  // TextInput's floating-label backdrop defaults to Paper's MD3
+  // background/surface tokens. Those already match this screen globally
+  // (see ThemeService), but we still scope an explicit override here so
+  // the label backdrop always tracks the exact card surface it's drawn
+  // on (background7), regardless of any future global token changes.
+  const inputTheme = {
+    colors: {
+      background: theme.colors.background7,
+      surface: theme.colors.background7,
+      onSurface: theme.colors.text1,
+      onSurfaceVariant: theme.colors.text1,
+      primary: theme.colors.primary,
+      outline: theme.colors.background4,
+    },
+  };
+
   return (
     <ScrollView
       style={styles.screen}
       contentContainerStyle={styles.scrollContent}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>{DASHBOARD.title.label}</Text>
-        <Text style={styles.headerSubtitle}>{DASHBOARD.instruction.label}</Text>
+        <Text style={styles.headerTitle}>
+          {DASHBOARD.title?.label ?? 'Numerology'}
+        </Text>
+        <Text style={styles.headerSubtitle}>
+          {DASHBOARD.instruction?.label ??
+            'Enter a full name to see what it adds up to'}
+        </Text>
       </View>
 
       {/* Input Card */}
-      <Card style={styles.inputCard} mode="elevated">
+      <Card style={styles.inputCard} mode="contained">
         <Card.Content style={styles.inputCardContent}>
           <View style={styles.row}>
-            <TextInput
-              label={DASHBOARD.firstName.label}
-              value={firstName}
-              handleChange={newName => {
-                handleNameChange(`firstName`, newName);
-              }}
-              style={styles.nameField}
-            />
+            <PaperProvider theme={inputTheme}>
+              <TextInput
+                label={DASHBOARD.firstName.label}
+                value={firstName}
+                handleChange={newName => {
+                  handleNameChange(`firstName`, newName);
+                }}
+                style={styles.nameField}
+              />
+            </PaperProvider>
             <Badge value={firstNameWeight} />
           </View>
 
           <Divider style={styles.divider} />
 
           <View style={styles.row}>
-            <TextInput
-              label={DASHBOARD.middleName.label}
-              value={middleName}
-              handleChange={newName => {
-                handleNameChange(`middleName`, newName);
-              }}
-              style={styles.nameField}
-            />
+            <PaperProvider theme={inputTheme}>
+              <TextInput
+                label={DASHBOARD.middleName.label}
+                value={middleName}
+                handleChange={newName => {
+                  handleNameChange(`middleName`, newName);
+                }}
+                style={styles.nameField}
+              />
+            </PaperProvider>
             <Badge value={middleNameWeight} />
           </View>
 
           <Divider style={styles.divider} />
 
           <View style={styles.row}>
-            <TextInput
-              label={DASHBOARD.lastName.label}
-              value={lastName}
-              handleChange={newName => {
-                handleNameChange(`lastName`, newName);
-              }}
-              style={styles.nameField}
-            />
+            <PaperProvider theme={inputTheme}>
+              <TextInput
+                label={DASHBOARD.lastName.label}
+                value={lastName}
+                handleChange={newName => {
+                  handleNameChange(`lastName`, newName);
+                }}
+                style={styles.nameField}
+              />
+            </PaperProvider>
             <Badge value={lastNameWeight} />
           </View>
         </Card.Content>
       </Card>
 
-      {/* Result Card */}
-      <Card style={styles.resultCard} mode="elevated">
+      {/* Result Card — the one place gold appears */}
+      <Card style={styles.resultCard} mode="contained">
         <Card.Content style={styles.resultCardContent}>
           <Text style={styles.resultLabel}>{DASHBOARD.result.label}</Text>
 
@@ -149,7 +186,6 @@ const DashboardScreen = ({navigation}: any) => {
           </View>
 
           <Text style={styles.resultFormula}>
-            {DASHBOARD.result.subtitle + ' '}
             {getNumericSumValue(firstNameWeight)} +{' '}
             {getNumericSumValue(middleNameWeight)} +{' '}
             {getNumericSumValue(lastNameWeight)}
@@ -169,7 +205,7 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     scrollContent: {
       paddingHorizontal: 20,
       paddingTop: 32,
-      paddingBottom: 40,
+      paddingBottom: 48,
       rowGap: 20,
     },
 
@@ -191,6 +227,8 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     inputCard: {
       borderRadius: 20,
       backgroundColor: theme.colors.background7,
+      borderWidth: 1,
+      borderColor: theme.colors.background4,
     },
     inputCardContent: {
       paddingVertical: 8,
@@ -211,12 +249,12 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
     nameField: {
       flex: 1,
     },
-    scoreField: {},
 
     resultCard: {
       borderRadius: 24,
-      backgroundColor: theme.colors.background5,
-      elevation: 4,
+      backgroundColor: theme.colors.background8,
+      borderWidth: 1,
+      borderColor: theme.colors.goldMuted,
     },
     resultCardContent: {
       alignItems: 'center',
@@ -227,26 +265,29 @@ const getStyles = (theme: ReturnType<typeof useTheme>) =>
       fontSize: 15,
       fontWeight: '600',
       letterSpacing: 0.5,
-      textTransform: 'uppercase',
-      color: theme.colors.onPrimary,
-      opacity: 0.85,
+      color: theme.colors.text1,
+      opacity: 0.6,
     },
     resultBadge: {
-      backgroundColor: theme.colors.onPrimary,
+      backgroundColor: theme.colors.goldMuted,
       borderRadius: 100,
       width: 120,
       height: 120,
       alignItems: 'center',
       justifyContent: 'center',
+      borderWidth: 2,
+      borderColor: theme.colors.gold,
     },
     resultNumber: {
       fontWeight: '800',
-      color: theme.colors.background5,
+      fontVariant: ['tabular-nums'],
+      color: theme.colors.gold,
     },
     resultFormula: {
       fontSize: 13,
-      color: theme.colors.onPrimary,
-      opacity: 0.85,
+      fontVariant: ['tabular-nums'],
+      color: theme.colors.text1,
+      opacity: 0.6,
       textAlign: 'center',
     },
   });

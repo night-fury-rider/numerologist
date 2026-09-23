@@ -27,42 +27,6 @@ export const LIGHT_COLORS = {
   transparent: 'transparent',
 };
 
-export const BLUE_COLOR_THEME = {
-  ...LIGHT_COLORS,
-  accent1: '#1B76E2', // Dashboard --> Result number/highlight color
-  background1: '#f8f9fd', // Main background color of app
-  background2: '#dce8f4', // Dashboard --> Searchbar background color
-  background3: '#d0e4ff', // Dashboard --> + icon background color
-  background4: '#e6edfd', // Bottom tab background color
-  background5: '#0061a2', // Bottom tab active tab background color
-  background6: '#0061a2', // Dashboard --> No items --> Icon of Phone
-  // Tools --> Import Item --> Import Button's background (When enabled)
-
-  background7: '#f8f9fe', // Add/Edit Item --> Background color
-
-  background8: '#f0f4ff', // Item Details --> Tile Background color
-
-  text1: '#1e1b16', // Main Text color
-};
-
-export const ORANGE_COLOR_THEME = {
-  ...LIGHT_COLORS,
-  accent1: '#9d4400', // matches orange theme's own accent, e.g. background6
-  background1: '#fff8f5', // Main background color of app
-  background2: '#f3e5dc', // Dashboard --> Searchbar background color
-  background3: '#ffdbcb', // Dashboard --> + icon background color
-  background4: '#feeae1', // Bottom tab background color
-  background5: '#2e1500', // Bottom tab active tab background color
-  background6: '#9d4400', // Dashboard --> No items --> Icon of Phone
-  // Tools --> Import Item --> Import Button's background (When enabled)
-
-  background7: '#fff8f6', // Add/Edit Item --> Background color
-
-  background8: '#fff2ec', // Item Details --> Tile Background color
-
-  text1: '#1e1b16', // Main Text color
-};
-
 export const DARK_COLORS = {
   background9: '#8D8D8D', // Background of Menu item of Settings Screen.
 
@@ -81,24 +45,39 @@ export const DARK_COLORS = {
   text5: 'black',
 
   transparent: 'transparent',
-
-  background1: '#171308', // Main background color of app
-  background2: '#2c2512', // Dashboard --> Searchbar background color
-  background3: '#594500', // Dashboard --> + icon background color
-  background4: '#231f13', // Bottom tab background color
-  background5: '#51462a', // Bottom tab active tab background color
-  background6: '#cec5b4', // Dashboard --> No items --> Icon of Phone
-  // Tools --> Import Item --> Import Button's background (When enabled)
-
-  background7: '#171308', // Add/Edit Item --> Background color
-
-  background8: '#1f1b10', // Item Details --> Tile Background color
 };
 
-export const DARK_BLUE_COLOR_THEME = {
-  ...DARK_COLORS,
+// =====================
+// Numerology app theme
+// =====================
+// This app is dark-first by design (its signature look, not just a
+// "dark mode toggle" variant) — deep indigo-navy background with a
+// warm gold accent reserved for the result reveal. A light variant is
+// kept as an accessibility fallback for users who override system
+// settings.
+
+export const INDIGO_LIGHT_THEME = {
+  ...LIGHT_COLORS,
+  background1: '#F5F3FF', // Main background color of app
+  background4: '#E0DBF5', // Divider / hairline color
+  background7: '#FFFFFF', // Card / input surface background
+  background8: '#FFFFFF', // Result card surface background
+
+  text1: '#1A1730', // Main text color
+
+  gold: '#B8863F', // Result highlight accent (deeper, for contrast on light bg)
+  goldMuted: 'rgba(184, 134, 63, 0.14)', // Soft gold fill (result badge backdrop)
 };
 
-export const DARK_ORANGE_COLOR_THEME = {
+export const INDIGO_DARK_THEME = {
   ...DARK_COLORS,
+  background1: '#151233', // Main background color of app
+  background4: '#332C63', // Divider / hairline color
+  background7: '#1E1A42', // Card / input surface background
+  background8: '#1E1A42', // Result card surface background
+
+  text1: '#EDEAF6', // Main text color (off-white, not pure white)
+
+  gold: '#D4AF6A', // Result highlight accent
+  goldMuted: 'rgba(212, 175, 106, 0.16)', // Soft gold fill (result badge backdrop)
 };
