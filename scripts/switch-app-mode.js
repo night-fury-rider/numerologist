@@ -11,19 +11,21 @@ const path = require('path');
 // 🔧 CONFIGURATION
 // =====================
 
-function getInitials(appName) {
+const appName = 'Numerologist';
+const applicationId = 'com.yuvrajpatil.apps.numerologist';
+const sandboxSuffix = '_Sandbox';
+
+function getSandboxAppName(appName) {
   return appName
     .trim() // remove leading/trailing spaces
     .split(/\s+/) // split by one or more spaces
     .map(word => word[0].toUpperCase()) // take first letter, uppercase
-    .join('_'); // join with underscore
+    .join('_')
+    .concat(sandboxSuffix); // join with underscore
 }
 
-const appName = 'Numerologist';
-const applicationId = 'com.yuvrajpatil.apps.numerologist';
-
-const testAppName = getInitials(appName);
-const testApplicationId = applicationId + 2;
+const testAppName = getSandboxAppName(appName);
+const testApplicationId = applicationId + sandboxSuffix;
 
 const APP_CONFIG = {
   prod: {
@@ -75,7 +77,6 @@ const androidStrings = path.join(
   'values',
   'strings.xml',
 );
-const appJson = path.join(__dirname, '..', 'app.json');
 
 // Dynamically build MainActivity path from packageId
 // e.g., com.jackjones.apps.contacts → android/app/src/main/java/com/jackjones/apps/contacts/MainActivity.kt
@@ -158,15 +159,6 @@ if (fs.existsSync(androidStrings)) {
       `<string name="app_name">${target.appName}</string>`,
     );
   });
-}
-
-// 3️⃣ app.json
-if (fs.existsSync(appJson)) {
-  const appData = JSON.parse(fs.readFileSync(appJson, 'utf8'));
-  appData.name = target.appName.replace(/\s+/g, '');
-  appData.displayName = target.appName;
-  fs.writeFileSync(appJson, JSON.stringify(appData, null, 2));
-  console.log(`✅ Updated: app.json`);
 }
 
 // 4️⃣ Kotlin MainActivity
