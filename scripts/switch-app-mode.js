@@ -32,13 +32,11 @@ const APP_CONFIG = {
     appName: appName,
     packageId: applicationId,
     iosBundleId: applicationId,
-    mainComponentName: appName,
   },
   sandbox: {
     appName: testAppName,
     packageId: testApplicationId,
     iosBundleId: testApplicationId,
-    mainComponentName: testAppName,
   },
 };
 
@@ -78,26 +76,6 @@ const androidStrings = path.join(
   'strings.xml',
 );
 
-// Dynamically build MainActivity path from packageId
-// e.g., com.jackjones.apps.contacts → android/app/src/main/java/com/jackjones/apps/contacts/MainActivity.kt
-function getMainActivityPath(packageId, ext = 'kt') {
-  const parts = packageId.split('.');
-  return path.join(
-    __dirname,
-    '..',
-    'android',
-    'app',
-    'src',
-    'main',
-    'java',
-    ...parts,
-    `MainActivity.${ext}`,
-  );
-}
-
-const kotlinMainActivity = getMainActivityPath(APP_CONFIG.prod.packageId, 'kt');
-const javaMainActivity = getMainActivityPath(APP_CONFIG.prod.packageId, 'java');
-
 // =====================
 // ⚙️ HELPER FUNCTIONS
 // =====================
@@ -111,18 +89,6 @@ function replaceInFile(file, replaceFn) {
     return true;
   }
   return false;
-}
-
-function updateMainComponentNameInSource(content, newName) {
-  const funcIndex = content.indexOf('getMainComponentName');
-  if (funcIndex === -1) return content;
-  const firstQuote = content.indexOf('"', funcIndex);
-  if (firstQuote === -1) return content;
-  const secondQuote = content.indexOf('"', firstQuote + 1);
-  if (secondQuote === -1) return content;
-  return (
-    content.slice(0, firstQuote + 1) + newName + content.slice(secondQuote)
-  );
 }
 
 function escapeRegExp(string) {
@@ -161,16 +127,6 @@ if (fs.existsSync(androidStrings)) {
   });
 }
 
-// 4️⃣ Kotlin MainActivity
-replaceInFile(kotlinMainActivity, data =>
-  updateMainComponentNameInSource(data, target.mainComponentName),
-);
-
-// 5️⃣ Java MainActivity
-replaceInFile(javaMainActivity, data =>
-  updateMainComponentNameInSource(data, target.mainComponentName),
-);
-
 // 6️⃣ iOS Info.plist
 const iosInfoPlist = path.join(
   __dirname,
@@ -206,4 +162,3 @@ if (fs.existsSync(iosInfoPlist)) {
 console.log(`\n🎉 Successfully switched to ${mode.toUpperCase()} mode!`);
 console.log(`   → App Name: ${target.appName}`);
 console.log(`   → Package ID: ${target.packageId}`);
-console.log(`   → Main Component Name: ${target.mainComponentName}\n`);
