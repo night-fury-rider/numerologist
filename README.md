@@ -29,24 +29,38 @@ This app has following features:
 
 ---
 
-# Prerequisite
+## ⚙️ Prerequisites
 
-- Mobile with USB debugging enabled
-- Mobile and laptop are on the same wifi.
+| Tool             | Version    |
+| ---------------- | ---------- |
+| Node.js          | >= 22.13.0 |
+| React Native CLI | Latest     |
+| Android Studio   | Latest     |
+| JDK              | 17         |
 
-# Create the dev build
+---
+
+<br />
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Create the dev build
 
 ```
 npm run mode:sandbox
 ```
 
-# Create the prod build
+### Create the prod build
 
 ```
 npm run mode:prod
 ```
 
-# Install the app on mobile
+### Install the app
 
 ```
 npm run android
