@@ -106,6 +106,11 @@ https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on
 
 ---
 
+# Troubleshooting
+https://github.com/night-fury-rider/react-native-template/wiki/Troubleshooting
+
+---
+
 # Disclaimer
 
 I don't personally believe in numerology, but I created this app for those who do.
