@@ -12,106 +12,90 @@ This app has following features:
 ✔️ Know your Bhagyank (Destiny Number)
 </pre>
 
+## 📱 Screenshots
+
 <p>
   <pre> 
     <img src="https://github.com/user-attachments/assets/ca673efa-0725-456c-be97-de78142873d6" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/0bc8020b-b4e0-42dc-9dea-07253bd38ee0" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/5d4999de-3a07-4127-bc4a-c90ca9379342" width="200" height="400" alt=""/>
   </pre>
 </p>
---- 
+---
 
+# 🧱 Tech Stack
 
-# Technologies and Libraries Used
-
-| Library                                                                              | Version |
-| ------------------------------------------------------------------------------------ | ------- |
-| [React Native](https://reactnative.dev/)                                             | v0.82   |
-| [React](https://reactjs.org/)                                                        | v19     |
-| [React Native Paper](https://callstack.github.io/react-native-paper/)                | v5      |
-| [React Native Date Picker](https://github.com/henninghall/react-native-date-picker)  | v5      |
-| [React Native Vector Icons](https://www.npmjs.com/package/react-native-vector-icons) | v10     |
-| [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)                   | v4      |
-| [Babel Module Resolver](https://www.npmjs.com/package/babel-plugin-module-resolver)  | v5      |
+| Layer             | Technology                               | Version | Why                                                                 |
+| ----------------- | ---------------------------------------- | ------- | ------------------------------------------------------------------- |
+| Core Technology   | React Native with CLI                    | 0.87    | Full native control — no Expo constraints                           |
+| Core Library      | React                                    | 19      |
+| Language          | TypeScript                               | 5       |
+| UI Library        | React Native Paper                       | 5       | Nice collection of UI components                                    |
+| State Management  | Redux Toolkit                            | 2       |
+| Key-Value Storage | MMKV                                     | 7       | 10x faster than AsyncStorage; used for preferences and access state |
+| Date Picker       | `@react-native-community/datetimepicker` | 9       |
+| Icons             | `react-native-vector-icons`              | 10      |
+| Module Resolver   | Babel Module Resolver                    | 5       | Easier to use with moduler resolver                                 |
 
 ---
+
+# 🛠 Getting Started
 
 ## ⚙️ Prerequisites
 
-| Tool             | Version    |
-| ---------------- | ---------- |
-| Node.js          | >= 22      |
-| React Native CLI | Latest     |
-| Android Studio   | Latest     |
-| JDK              | 17         |
+| Tool             | Version |
+| ---------------- | ------- |
+| Node.js          | >= 22   |
+| React Native CLI | Latest  |
+| Android Studio   | Latest  |
+| JDK              | 17      |
 
 ---
 
-<br />
-
-### Install dependencies
+### Installation
 
 ```bash
+git clone https://github.com/night-fury-rider/numerologist.git
+cd numerologist
 npm install
 ```
 
-### Create the dev build
+### Run
 
-```
-npm run mode:sandbox
-```
-
-### Create the prod build
-
-```
-npm run mode:prod
-```
-
-### Install the app
-
-```
+```bash
 npm run android
 ```
 
-### Export Source Files to build_src
+## Scripts
 
+```bash
+# Enter in Sandbox mode
+npm run mode:sandbox
 ```
+
+```bash
+# Exit the Sandbox mode
+npm run mode:prod
+```
+
+```bash
+# Export source files
 npm run export-src
 ```
 
-# Enable Wireless hot reload
-
-- Run `adb devices` to get Mobile device name.
-- Run `ipconfig` to get the IP (v4).
-- Connect mobile to laptop via USB cable.
-- Install the app
-
-```
-npm android
-```
-
-- Disconnect mobile from USB. Metro bundler will be disconnected.
-- Shake the mobile to open the React Native Dev menu. Select Settings. Open Debug server host & port for device.
-- Enter IP v4 (from step 1) and port number (Generally 8081). Ex. `172.1.1.2:8081`
-- Shake the mobile to open the React Native Dev menu .
-- Select Reload. Now hot reload should work.
-
 ---
 
-# Create the release build
+## Wiki
 
-https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build
+- [Wireless Hot Reload on Mobile](https://github.com/night-fury-rider/react-native-template/wiki/Wireless-Hot-Reload-on-Mobile)
+- [Create a Logo](https://github.com/night-fury-rider/react-native-template/wiki/Create-a-Logo)
+- [Create Android Launcher Images](https://github.com/night-fury-rider/react-native-template/wiki/Create-Android-Launcher-Images)
+- [Create Release Build](https://github.com/night-fury-rider/react-native-template/wiki/Create-the-release-build)
+- [Deploy to Play Store](https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore)
+- [Troubleshooting](https://github.com/night-fury-rider/react-native-template/wiki/Troubleshooting)
+- [SQLite Database Inspection](https://github.com/night-fury-rider/react-native-template/wiki/SQLite-Database-Inspection)
 
----
+## License
 
-# Deploy the App on Play Store
-
-https://github.com/night-fury-rider/react-native-template/wiki/Deploy-the-App-on-PlayStore
-
----
-
-# Troubleshooting
-https://github.com/night-fury-rider/react-native-template/wiki/Troubleshooting
-
----
+## MIT License — see [LICENSE](LICENSE) for details.
 
 # Disclaimer
 
