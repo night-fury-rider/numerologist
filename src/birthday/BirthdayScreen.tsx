@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import {Pressable, ScrollView, StyleSheet, View} from 'react-native';
+import {useEffect, useRef, useState} from 'react';
+import {ScrollView, StyleSheet, View} from 'react-native';
 
 import {Card, Text, useTheme} from 'react-native-paper';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
@@ -7,7 +7,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {BIRTHDAY} from '$common/constants/strings.constants';
 import {getDateString} from '$common/services/UtilService';
 import {getNumericSumValue} from '$dashboard/DashboardService';
-import DatePicker from 'common/components/DatePicker';
+import DatePicker, {DatePickerHandle} from 'common/components/DatePicker';
 
 // TODO: Use specific type instead of any
 const BirthdayScreen = () => {
@@ -21,6 +21,8 @@ const BirthdayScreen = () => {
   const [mulyankClarification, setMulyankClarification] = useState(``);
   const [bhagyank, setBhagyank] = useState(0);
   const [bhagyankClarification, setBhagyankClarification] = useState(``);
+
+  const datePickerRef = useRef<DatePickerHandle>(null);
 
   useEffect(() => {
     const numerologyDay = getNumericSumValue(birthdate.getDate());
@@ -71,10 +73,11 @@ const BirthdayScreen = () => {
           </Text>
         </View>
 
+        {/* Hero card opens the picker */}
         <Card
           style={styles.heroCard}
           mode="contained"
-          onPress={() => setDatePickerOpen(true)}>
+          onPress={() => datePickerRef.current?.open()}>
           <Card.Content style={styles.heroCardContent}>
             <View style={styles.heroDayCircle}>
               <Text style={styles.heroDayNumber}>{day}</Text>
@@ -90,12 +93,19 @@ const BirthdayScreen = () => {
           </Card.Content>
         </Card>
 
-        <DatePicker label="" value={birthdate} onChange={handleChangeDate} />
+        {/* Headless picker — no trigger UI, opened imperatively */}
+        <DatePicker
+          ref={datePickerRef}
+          label=""
+          value={birthdate}
+          onChange={handleChangeDate}
+          hideTrigger
+        />
 
         {/* Section label */}
         <Text style={styles.sectionLabel}>Your numbers</Text>
 
-        {/* Results — gold ring treatment, matching Dashboard's result badge */}
+        {/* Results */}
         <View style={styles.resultRow}>
           <Card style={styles.resultCard} mode="contained">
             <Card.Content style={styles.resultCardContent}>
