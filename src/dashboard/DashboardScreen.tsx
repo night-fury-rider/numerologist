@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 import {
   Card,
   Divider,
@@ -112,6 +112,7 @@ const DashboardScreen = ({navigation}: any) => {
     <ScrollView
       style={styles.screen}
       contentContainerStyle={styles.scrollContent}>
+      <StatusBar barStyle="dark-content" />
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>
