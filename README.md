@@ -2,6 +2,8 @@
 
 It is a React Native app developed for numerology assist. It provides personalized numerology readings and insights based on your birthdate and name to help guide your life decisions and reveal hidden patterns.
 
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="60">](https://play.google.com/store/apps/details?id=com.yuvrajpatil.apps.numerologist&hl=en_IN)
+
 This app has following features:
 
 <pre>
