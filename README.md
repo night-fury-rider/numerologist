@@ -12,7 +12,7 @@ This app has following features:
 
 <p>
   <pre> 
-    <img src="https://github.com/user-attachments/assets/03d9ebcb-8cc8-4ce5-b523-d2fef2831ba9" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/b45f2402-147b-409d-a2d5-a6d45d4054f8" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/d01c5036-674a-4f64-9e8b-0576ecdc1163" width="200" height="400" alt=""/>
+    <img src="https://github.com/user-attachments/assets/ca673efa-0725-456c-be97-de78142873d6" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/0bc8020b-b4e0-42dc-9dea-07253bd38ee0" width="200" height="400" alt=""/> <img src="https://github.com/user-attachments/assets/5d4999de-3a07-4127-bc4a-c90ca9379342" width="200" height="400" alt=""/>
   </pre>
 </p>
 --- 
