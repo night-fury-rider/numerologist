@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
+import {COMMON} from '$common/constants/strings.constants';
+
 export interface DatePickerHandle {
   open: () => void;
 }
@@ -91,17 +93,17 @@ const DatePicker = forwardRef<DatePickerHandle, Props>(
           parsed.getMonth() !== month ||
           parsed.getFullYear() !== year
         ) {
-          setManualError('Invalid date. Use DD/MM/YYYY');
+          setManualError(COMMON.datePicker.invalidDate);
           return;
         }
 
         if (parsed < MIN_DATE) {
-          setManualError('Date must be after 1900');
+          setManualError(COMMON.datePicker.dateTooEarly);
           return;
         }
 
         if (parsed > new Date()) {
-          setManualError('Date cannot be in the future');
+          setManualError(COMMON.datePicker.dateInFuture);
           return;
         }
 
@@ -128,7 +130,9 @@ const DatePicker = forwardRef<DatePickerHandle, Props>(
             </Text>
             <TouchableOpacity onPress={toggleMode}>
               <Text style={[styles.toggleText, {color: theme.primary}]}>
-                {manualMode ? '📅 Use Picker' : '⌨️ Type Date'}
+                {manualMode
+                  ? COMMON.datePicker.usePicker
+                  : COMMON.datePicker.typeDate}
               </Text>
             </TouchableOpacity>
           </View>
@@ -146,7 +150,7 @@ const DatePicker = forwardRef<DatePickerHandle, Props>(
                   color: theme.text.primary,
                 },
               ]}
-              placeholder="DD/MM/YYYY"
+              placeholder={COMMON.datePicker.placeholder}
               placeholderTextColor={theme.text.muted}
               value={manualText}
               onChangeText={handleManualChange}
@@ -160,7 +164,7 @@ const DatePicker = forwardRef<DatePickerHandle, Props>(
             )}
             {value && !manualError && (
               <Text style={[styles.parsedDate, {color: theme.status.success}]}>
-                ✓ {dateToDisplay(value)}
+                {COMMON.datePicker.successPrefix} {dateToDisplay(value)}
               </Text>
             )}
           </View>
@@ -181,7 +185,8 @@ const DatePicker = forwardRef<DatePickerHandle, Props>(
                   styles.dateText,
                   {color: value ? theme.text.primary : theme.text.muted},
                 ]}>
-                📅 {value ? dateToDisplay(value) : 'Select date'}
+                {COMMON.datePicker.pickerPrefix}{' '}
+                {value ? dateToDisplay(value) : COMMON.datePicker.selectDate}
               </Text>
             </TouchableOpacity>
           )

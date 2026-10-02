@@ -2,6 +2,17 @@
 // Prefer keeping strings inside appropriate module objects
 
 export const COMMON = {
+  datePicker: {
+    placeholder: 'DD/MM/YYYY',
+    selectDate: 'Select date',
+    usePicker: '📅 Use Picker',
+    typeDate: '⌨️ Type Date',
+    invalidDate: 'Invalid date. Use DD/MM/YYYY',
+    dateTooEarly: 'Date must be after 1900',
+    dateInFuture: 'Date cannot be in the future',
+    pickerPrefix: '📅',
+    successPrefix: '✓',
+  },
   errorsMsg: {
     itemNotFound: 'Unable to find the item',
     errorInPermissions: 'Error in permission',
