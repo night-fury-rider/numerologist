@@ -1,5 +1,5 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
+
   "compilerOptions": {
     "baseUrl": ".",
     "importHelpers": true,
@@ -17,5 +17,8 @@
       "$birthday/*": ["src/birthday/*"],
       "$settings/*": ["src/settings/*"]
     }
-  }
+  },
+  "exclude": ["**/node_modules", "**/Pods"],
+  "extends": "@react-native/typescript-config",
+  "include": ["**/*.ts", "**/*.tsx"]
 }

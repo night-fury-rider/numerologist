@@ -1,12 +1,13 @@
 import {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import DatePicker from 'react-native-date-picker';
+import {Pressable, ScrollView, StyleSheet, View} from 'react-native';
+
 import {Card, Text, useTheme} from 'react-native-paper';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {BIRTHDAY, DASHBOARD} from '$common/constants/strings.constants';
+import {BIRTHDAY} from '$common/constants/strings.constants';
 import {getDateString} from '$common/services/UtilService';
 import {getNumericSumValue} from '$dashboard/DashboardService';
+import DatePicker from 'common/components/DatePicker';
 
 // TODO: Use specific type instead of any
 const BirthdayScreen = () => {
@@ -89,21 +90,7 @@ const BirthdayScreen = () => {
           </Card.Content>
         </Card>
 
-        <DatePicker
-          modal
-          open={isDatePickerOpen}
-          date={birthdate}
-          mode="date"
-          androidVariant="iosClone"
-          textColor={theme.colors.text1}
-          dividerColor={theme.colors.primary}
-          onConfirm={newDate => {
-            handleChangeDate(newDate);
-          }}
-          onCancel={() => {
-            setDatePickerOpen(false);
-          }}
-        />
+        <DatePicker label="" value={birthdate} onChange={handleChangeDate} />
 
         {/* Section label */}
         <Text style={styles.sectionLabel}>Your numbers</Text>

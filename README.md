@@ -36,7 +36,7 @@ This app has following features:
 
 | Tool             | Version    |
 | ---------------- | ---------- |
-| Node.js          | >= 22.13.0 |
+| Node.js          | >= 22      |
 | React Native CLI | Latest     |
 | Android Studio   | Latest     |
 | JDK              | 17         |
